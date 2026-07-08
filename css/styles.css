@@ -151,6 +151,10 @@ section { position: relative; }
   opacity: 0;
   transition: opacity 1.1s ease;
   will-change: opacity;
+  /* zoom ancorado no topo-esquerda: joga o canto inferior direito
+     (marca d'água do Gemini) para fora da área visível, que é recortada */
+  transform: scale(1.14);
+  transform-origin: left top;
 }
 .hero__video.is-active { opacity: 1; }
 /* degradê da esquerda para a direita, terminando no meio do vídeo */
