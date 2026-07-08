@@ -219,16 +219,16 @@ section { position: relative; }
   object-fit: cover;
   object-position: center;
   display: block;
-  /* base do duotone: tira a cor original e dá contraste */
-  filter: grayscale(1) contrast(1.06) brightness(.96);
+  /* tint sutil: mantém o detalhe/cor da foto, só reduz um pouco a saturação */
+  filter: grayscale(.3) contrast(1.03);
 }
-/* camada de cor da marca — tinge a foto de verde (como o azul do mockup) */
+/* camada de cor da marca — verde perceptível, mas sem cobrir a foto */
 .photo-grid .tile::after {
   content: "";
   position: absolute; inset: 0;
   background: var(--blue);
   mix-blend-mode: color;
-  opacity: .72;
+  opacity: .32;
   pointer-events: none;
 }
 /* leve profundidade nas sombras */
@@ -266,29 +266,43 @@ section { position: relative; }
    PARCEIROS (dark)
    ========================================================= */
 .partners h2 { font-size: clamp(30px, 4.2vw, 48px); margin-bottom: 48px; max-width: 16ch; }
-.logo-row {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+
+/* Carrossel automático infinito */
+.marquee {
+  overflow: hidden;
+  padding: 6px 0;
+  -webkit-mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee__track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+  will-change: transform;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* trilho tem 2 cópias -> loop sem emenda */
 }
 .logo-card {
+  flex: 0 0 auto;
+  width: 216px;
+  height: 120px;
   background: #fff;
-  border-radius: 8px;
-  aspect-ratio: 16 / 10;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 24px;
 }
-.logo-card img { max-height: 60px; width: auto; object-fit: contain; }
-.logo-card .ph {
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: #c9c9cf;
-  font-size: 15px;
-  letter-spacing: .04em;
-}
+.logo-card img { max-height: 72px; max-width: 82%; width: auto; object-fit: contain; }
+.logo-card--dark { background: #14141a; border: 1px solid #26262c; }
 .partners .note { margin-top: 30px; font-style: italic; color: var(--muted-dark); font-size: 13.5px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation-duration: 90s; }
+}
 
 /* =========================================================
    QUALIFICAÇÃO (paper)
