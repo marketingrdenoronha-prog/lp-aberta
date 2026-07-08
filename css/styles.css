@@ -204,12 +204,40 @@ section { position: relative; }
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
-.photo-grid img {
-  width: 100%;
+/* enquadramento: recorte quadrado (cover), ignorando o enquadramento original */
+.photo-grid .tile {
+  position: relative;
+  margin: 0;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
   border-radius: 6px;
-  filter: grayscale(.15) contrast(1.02);
+  overflow: hidden;
+  background: #06140a;
+}
+.photo-grid .tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  /* base do duotone: tira a cor original e dá contraste */
+  filter: grayscale(1) contrast(1.06) brightness(.96);
+}
+/* camada de cor da marca — tinge a foto de verde (como o azul do mockup) */
+.photo-grid .tile::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--blue);
+  mix-blend-mode: color;
+  opacity: .72;
+  pointer-events: none;
+}
+/* leve profundidade nas sombras */
+.photo-grid .tile::before {
+  content: "";
+  position: absolute; inset: 0;
+  z-index: 1;
+  background: linear-gradient(160deg, rgba(0,0,0,0) 40%, rgba(3,20,8,.45) 100%);
+  pointer-events: none;
 }
 
 /* =========================================================
