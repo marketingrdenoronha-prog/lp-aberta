@@ -6,8 +6,8 @@
 :root {
   --black: #0a0a0c;
   --black-2: #101014;
-  --blue: #1b4dff;
-  --blue-600: #1740d6;
+  --blue: #4cf35e;
+  --blue-600: #38d24a;
   --white: #ffffff;
   --paper: #f6f6f5;
   --paper-2: #efefee;
@@ -92,7 +92,7 @@ h1, h2, h3 {
   cursor: pointer;
   transition: transform .15s ease, background .15s ease;
 }
-.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary { background: var(--blue); color: #06210c; }
 .btn-primary:hover { background: var(--blue-600); transform: translateY(-1px); }
 .btn-lg { padding: 17px 30px; font-size: 16px; }
 
@@ -140,14 +140,28 @@ section { position: relative; }
 }
 .hero__bg {
   position: absolute; inset: 0;
-  background-size: cover;
-  background-position: center;
   z-index: 0;
+  overflow: hidden;
+  background: #06120a;
 }
+.hero__video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.1s ease;
+  will-change: opacity;
+}
+.hero__video.is-active { opacity: 1; }
+/* degradê da esquerda para a direita, terminando no meio do vídeo */
 .hero__bg::after {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(6,6,10,.55) 0%, rgba(6,6,10,.35) 45%, rgba(6,6,10,.92) 100%);
+  background: linear-gradient(90deg,
+    #0a0a0c 0%,
+    rgba(10,10,12,0.88) 20%,
+    rgba(10,10,12,0.45) 36%,
+    rgba(10,10,12,0) 50%);
 }
 .hero .container { position: relative; z-index: 1; padding-bottom: 68px; padding-top: 120px; }
 .hero h1 {

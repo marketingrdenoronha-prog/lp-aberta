@@ -2,8 +2,8 @@
    Diagnóstico — multi-step form
    ========================================================= */
 :root {
-  --blue: #1b4dff;
-  --blue-600: #1740d6;
+  --blue: #4cf35e;
+  --blue-600: #38d24a;
   --ink: #111114;
   --muted: #6b6b73;
   --line: #e6e6e4;
@@ -124,7 +124,7 @@ body {
   transition: border-color .15s ease, background .15s ease, transform .1s ease;
 }
 .option:hover { border-color: #bcbcc4; }
-.option.selected { border-color: var(--blue); background: #f2f5ff; }
+.option.selected { border-color: var(--blue); background: #ecfced; }
 .option .key {
   flex: 0 0 auto;
   width: 30px; height: 30px;
@@ -138,7 +138,7 @@ body {
   color: var(--muted);
   text-transform: uppercase;
 }
-.option.selected .key { background: var(--blue); color: #fff; }
+.option.selected .key { background: var(--blue); color: #06210c; }
 
 /* Actions */
 .actions {
@@ -160,7 +160,7 @@ body {
   cursor: pointer;
   transition: background .15s ease, transform .12s ease;
 }
-.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary { background: var(--blue); color: #06210c; }
 .btn-primary:hover { background: var(--blue-600); transform: translateY(-1px); }
 .btn-primary:disabled { opacity: .4; cursor: not-allowed; transform: none; }
 .btn-back {
@@ -193,7 +193,7 @@ body {
 body.result-mode { background: #0a0a0c; }
 body.result-mode .topbar { border-bottom-color: transparent; background: #0a0a0c; }
 body.result-mode .topbar .brand { color: #5f5f6b; }
-body.result-mode .topbar .brand .dot { color: #2b3a7a; }
+body.result-mode .topbar .brand .dot { color: #1f5a2a; }
 
 .result { width: 100%; max-width: 720px; margin: 0 auto; color: #fff; }
 .result .kicker {
