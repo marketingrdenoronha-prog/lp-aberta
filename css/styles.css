@@ -1,0 +1,341 @@
+/* =========================================================
+   Target Mídia Digital — Landing Page
+   Assessoria de marketing para PMEs de São José do Rio Preto
+   ========================================================= */
+
+:root {
+  --black: #0a0a0c;
+  --black-2: #101014;
+  --blue: #1b4dff;
+  --blue-600: #1740d6;
+  --white: #ffffff;
+  --paper: #f6f6f5;
+  --paper-2: #efefee;
+  --ink: #111114;
+  --muted: #6b6b73;
+  --muted-dark: #9a9aa6;
+  --line: #e4e4e2;
+  --line-dark: #26262c;
+  --radius: 10px;
+  --maxw: 1160px;
+  --font-display: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Eyebrow / section label ---------- */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 26px;
+}
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: var(--blue);
+  display: inline-block;
+}
+.section-dark .eyebrow { color: var(--muted-dark); }
+
+/* ---------- Headings ---------- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+  margin: 0;
+}
+.accent { color: var(--blue); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 15px 26px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease;
+}
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-600); transform: translateY(-1px); }
+.btn-lg { padding: 17px 30px; font-size: 16px; }
+
+/* ---------- Sections ---------- */
+section { position: relative; }
+.section-dark { background: var(--black); color: #fff; }
+.section-paper { background: var(--paper); color: var(--ink); }
+.pad { padding: 108px 0; }
+@media (max-width: 720px){ .pad { padding: 72px 0; } }
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+}
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+}
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: .04em;
+  color: #fff;
+}
+.brand .dot { color: var(--blue); }
+.nav .btn { padding: 11px 20px; font-size: 14px; }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  position: relative;
+  min-height: 660px;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+  overflow: hidden;
+}
+.hero__bg {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+.hero__bg::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(6,6,10,.55) 0%, rgba(6,6,10,.35) 45%, rgba(6,6,10,.92) 100%);
+}
+.hero .container { position: relative; z-index: 1; padding-bottom: 68px; padding-top: 120px; }
+.hero h1 {
+  font-size: clamp(44px, 6.4vw, 84px);
+  max-width: 12ch;
+  margin: 0 0 22px;
+}
+.hero p.sub {
+  max-width: 46ch;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cfcfd6;
+  margin: 0 0 30px;
+}
+
+/* =========================================================
+   AGÊNCIA (dark)
+   ========================================================= */
+.agency-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.agency h2 { font-size: clamp(34px, 4.6vw, 56px); margin-bottom: 30px; }
+.agency p { color: #c7c7cf; line-height: 1.7; font-size: 15.5px; margin: 0 0 18px; max-width: 44ch; }
+.agency p strong { color: #fff; font-weight: 600; }
+.agency .quote {
+  margin-top: 34px;
+  font-style: italic;
+  color: var(--muted-dark);
+  font-size: 14px;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  filter: grayscale(.15) contrast(1.02);
+}
+
+/* =========================================================
+   MÉTODO (paper)
+   ========================================================= */
+.method h2 { font-size: clamp(32px, 4.4vw, 52px); margin-bottom: 18px; }
+.method .lead { color: var(--muted); max-width: 52ch; line-height: 1.6; margin: 0 0 64px; font-size: 15.5px; }
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+.step .num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 40px;
+  color: var(--blue);
+  letter-spacing: -.03em;
+  margin-bottom: 14px;
+}
+.step h3 { font-size: 20px; margin-bottom: 12px; letter-spacing: -.01em; }
+.step p { color: var(--muted); line-height: 1.65; font-size: 14.5px; margin: 0; }
+.method .cta-row { text-align: center; margin-top: 72px; }
+
+/* =========================================================
+   PARCEIROS (dark)
+   ========================================================= */
+.partners h2 { font-size: clamp(30px, 4.2vw, 48px); margin-bottom: 48px; max-width: 16ch; }
+.logo-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+.logo-card {
+  background: #fff;
+  border-radius: 8px;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.logo-card img { max-height: 60px; width: auto; object-fit: contain; }
+.logo-card .ph {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: #c9c9cf;
+  font-size: 15px;
+  letter-spacing: .04em;
+}
+.partners .note { margin-top: 30px; font-style: italic; color: var(--muted-dark); font-size: 13.5px; }
+
+/* =========================================================
+   QUALIFICAÇÃO (paper)
+   ========================================================= */
+.qualify h2 { font-size: clamp(32px, 4.4vw, 52px); margin-bottom: 44px; }
+.checklist { display: grid; gap: 4px; max-width: 780px; }
+.check-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 4px;
+  border-bottom: 1px solid var(--line);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.check-item svg { flex: 0 0 auto; margin-top: 2px; color: var(--blue); }
+.qualify .note { margin-top: 30px; font-style: italic; color: var(--muted); font-size: 13.5px; }
+
+/* =========================================================
+   EQUIPE (paper)
+   ========================================================= */
+.team-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+.team-photo img {
+  width: 100%;
+  border-radius: 10px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  filter: grayscale(.1);
+}
+.team h2 { font-size: clamp(30px, 4.2vw, 50px); margin-bottom: 22px; }
+.team .who { font-family: var(--font-display); font-weight: 700; font-size: 19px; margin-bottom: 4px; }
+.team .role { color: var(--muted); font-size: 13.5px; letter-spacing: .04em; margin-bottom: 22px; }
+.team p { color: #3f3f47; line-height: 1.7; font-size: 15px; max-width: 46ch; }
+
+/* =========================================================
+   PRÓXIMO PASSO (dark)
+   ========================================================= */
+.next h2 { font-size: clamp(32px, 4.6vw, 54px); margin-bottom: 22px; max-width: 16ch; }
+.next p { color: #c7c7cf; line-height: 1.7; max-width: 52ch; font-size: 15.5px; margin: 0 0 34px; }
+.next .fine { margin-top: 22px; font-size: 12.5px; color: var(--muted-dark); letter-spacing: .02em; }
+
+/* =========================================================
+   FAQ (paper)
+   ========================================================= */
+.faq h2 { font-size: clamp(30px, 4.4vw, 52px); margin-bottom: 48px; max-width: 20ch; }
+.faq-list { max-width: 860px; }
+.faq-item { border-top: 1px solid var(--line); }
+.faq-item:last-child { border-bottom: 1px solid var(--line); }
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 26px 4px;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.faq-q .qn { color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: .06em; min-width: 24px; }
+.faq-q .chev { margin-left: auto; transition: transform .25s ease; color: var(--muted); }
+.faq-item.open .faq-q .chev { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.faq-a-inner { padding: 0 4px 26px 60px; color: var(--muted); line-height: 1.7; font-size: 15px; max-width: 60ch; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer { background: var(--black); color: var(--muted-dark); padding: 40px 0; }
+.footer .container { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.footer .brand { font-size: 17px; }
+.footer .copy { font-size: 12.5px; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px){
+  .agency-grid { grid-template-columns: 1fr; gap: 40px; }
+  .team-grid { grid-template-columns: 1fr; gap: 34px; }
+  .steps { grid-template-columns: 1fr; gap: 36px; }
+  .logo-row { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px){
+  .logo-row { grid-template-columns: repeat(2, 1fr); }
+  .footer .container { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .nav .btn { display: none; }
+}

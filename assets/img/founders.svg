@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="800" viewBox="0 0 640 800">
+  <rect width="640" height="800" fill="#1a1a20"/>
+  <defs>
+    <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22222b"/>
+      <stop offset="1" stop-color="#101015"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#fg)"/>
+  <g fill="#33333d">
+    <circle cx="230" cy="330" r="90"/>
+    <path d="M110 800 v-160 a120 120 0 0 1 240 0 v160 z"/>
+    <circle cx="420" cy="370" r="82"/>
+    <path d="M312 800 v-150 a108 108 0 0 1 216 0 v150 z"/>
+  </g>
+  <text x="320" y="770" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="20" fill="#4a4a56" letter-spacing="3">RICARDO &amp; JOÃO</text>
+</svg>
