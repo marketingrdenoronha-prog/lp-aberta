@@ -187,8 +187,98 @@ body {
 .done h2 { font-family: var(--font-display); font-size: clamp(30px,4.4vw,46px); margin: 0 0 16px; letter-spacing: -.02em; }
 .done p { color: var(--muted); font-size: 17px; line-height: 1.6; margin: 0 0 30px; }
 
+/* =========================================================
+   Tela final (dark) — resultado personalizado
+   ========================================================= */
+body.result-mode { background: #0a0a0c; }
+body.result-mode .topbar { border-bottom-color: transparent; background: #0a0a0c; }
+body.result-mode .topbar .brand { color: #5f5f6b; }
+body.result-mode .topbar .brand .dot { color: #2b3a7a; }
+
+.result { width: 100%; max-width: 720px; margin: 0 auto; color: #fff; }
+.result .kicker {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .18em;
+}
+.result .kicker-bar {
+  width: 84px; height: 3px;
+  background: var(--blue);
+  margin: 14px 0 30px;
+}
+.result h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(38px, 5.2vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -.02em;
+  margin: 0 0 24px;
+  color: #fff;
+}
+.result .intro {
+  color: #b6b6c0;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 46ch;
+  margin: 0 0 30px;
+}
+.result .insight {
+  border-left: 3px solid var(--blue);
+  padding: 2px 0 2px 22px;
+  margin: 0 0 34px;
+  max-width: 54ch;
+}
+.result .insight .tag {
+  display: block;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  margin-bottom: 10px;
+}
+.result .insight p { color: #d6d6de; font-size: 15.5px; line-height: 1.65; margin: 0; }
+.result .insight p.urg { color: #8f8f9c; font-size: 14px; margin-top: 12px; }
+
+.result .result-cta { margin: 0 0 40px; }
+
+.result .steps-box {
+  border: 1px solid #26262c;
+  border-radius: 12px;
+  margin: 4px 0 40px;
+}
+.result .rstep {
+  display: flex;
+  gap: 26px;
+  padding: 26px 28px;
+  border-bottom: 1px solid #1d1d23;
+}
+.result .rstep:last-child { border-bottom: none; }
+.result .rstep .n {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--blue);
+  letter-spacing: -.02em;
+  min-width: 34px;
+}
+.result .rstep h3 { font-family: var(--font-display); color: #fff; font-size: 18px; margin: 0 0 6px; letter-spacing: -.01em; }
+.result .rstep p { color: #9a9aa6; font-size: 14.5px; line-height: 1.6; margin: 0; max-width: 62ch; }
+
+.result .rfoot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #26262c;
+  padding-top: 24px;
+}
+.result .rfoot a { color: #8f8f9c; font-weight: 600; font-size: 15px; }
+.result .rfoot a:hover { color: #fff; }
+.result .rfoot .rbrand { color: #5f5f6b; font-family: var(--font-display); font-weight: 700; letter-spacing: .06em; }
+
 @media (max-width: 560px){
   .topbar { padding: 16px 20px; gap: 16px; }
   .topbar .brand { display: none; }
   .stage { padding: 24px 20px 80px; }
+  .result .rstep { padding: 22px 18px; gap: 16px; }
 }
