@@ -7,7 +7,7 @@
      perfil do lead e personaliza a leitura, a prioridade e o CTA.
    ========================================================= */
 
-/* Troque pelo WhatsApp real da Target (só dígitos, com DDI 55). */
+/* Troque pelo WhatsApp real da Beam (só dígitos, com DDI 55). */
 var WHATSAPP = '5517000000000';
 
 var QUESTIONS = [
@@ -240,7 +240,7 @@ function buildDiagnosis(a) {
 }
 
 function whatsappLink(a) {
-  var msg = 'Olá! Sou ' + (a.nome || '') + ', acabei de preencher o diagnóstico da Target.' +
+  var msg = 'Olá! Sou ' + (a.nome || '') + ', acabei de preencher o diagnóstico da Beam.' +
             '\nFaturamento: ' + (a.faturamento || '-') +
             '\nInvestimento em ads: ' + (a.investimento || '-') +
             '\nUrgência: ' + (a.urgencia || '-') +
@@ -267,7 +267,7 @@ function finish() {
       '<div class="kicker">' + d.badge + ' · SOLICITAÇÃO RECEBIDA</div>' +
       '<div class="kicker-bar"></div>' +
       '<h1>Sua análise do funil<br>está a caminho' + (nome ? ', ' + esc(nome) : '') + '.</h1>' +
-      '<p class="intro">Um especialista da Target vai mapear a sua operação e devolver a análise em até 48h, antes de qualquer proposta.</p>' +
+      '<p class="intro">Um especialista da Beam vai mapear a sua operação e devolver a análise em até 48h, antes de qualquer proposta.</p>' +
       '<div class="insight">' +
         '<span class="tag">LEITURA PRELIMINAR</span>' +
         '<p>' + d.insight + '</p>' +
@@ -281,7 +281,7 @@ function finish() {
       '</div>' +
       '<div class="rfoot">' +
         '<a href="index.html">← Voltar para o site</a>' +
-        '<span class="rbrand">TARGET.</span>' +
+        '<span class="rbrand">BEAM.</span>' +
       '</div>' +
     '</div>';
 
