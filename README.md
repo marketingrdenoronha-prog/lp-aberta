@@ -1,6 +1,6 @@
-# Beam Mídia Digital — Landing Page (São José do Rio Preto)
+# Beam360 — Landing Page (São José do Rio Preto)
 
-Landing page da Beam Mídia Digital, assessoria de Meta Ads e Google Ads para PMEs de **São José do Rio Preto**. Clone da versão de Florianópolis, com toda a copy adaptada para Rio Preto.
+Landing page da Beam360, assessoria de Meta Ads e Google Ads para PMEs de **São José do Rio Preto**. Clone da versão de Florianópolis, com toda a copy adaptada para Rio Preto.
 
 ## Estrutura
 

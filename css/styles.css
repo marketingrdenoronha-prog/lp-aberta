@@ -1,5 +1,5 @@
 /* =========================================================
-   Beam Mídia Digital — Landing Page
+   Beam360 — Landing Page
    Assessoria de marketing para PMEs de São José do Rio Preto
    ========================================================= */
 
@@ -276,27 +276,28 @@ section { position: relative; }
 }
 .marquee__track {
   display: flex;
-  gap: 18px;
   width: max-content;
-  animation: marquee-scroll 32s linear infinite;
+  animation: marquee-scroll 38s linear infinite;
   will-change: transform;
 }
 @keyframes marquee-scroll {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); } /* trilho tem 2 cópias -> loop sem emenda */
+  to   { transform: translateX(-50%); } /* trilho tem 2 cópias idênticas -> loop sem emenda */
 }
+/* espaço via margin (não flex gap) para o -50% cair exato e o loop ser contínuo */
 .logo-card {
   flex: 0 0 auto;
-  width: 216px;
-  height: 120px;
+  width: 380px;
+  height: 220px;
+  margin-right: 22px;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 34px;
 }
-.logo-card img { max-height: 72px; max-width: 82%; width: auto; object-fit: contain; }
+.logo-card img { max-height: 150px; max-width: 84%; width: auto; object-fit: contain; }
 .logo-card--dark { background: #14141a; border: 1px solid #26262c; }
 .partners .note { margin-top: 30px; font-style: italic; color: var(--muted-dark); font-size: 13.5px; }
 
@@ -333,8 +334,9 @@ section { position: relative; }
 .team-photo img {
   width: 100%;
   border-radius: 10px;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
+  object-position: center top; /* ancora no topo p/ não cortar o Marco (em pé) */
   filter: grayscale(.1);
 }
 .team h2 { font-size: clamp(30px, 4.2vw, 50px); margin-bottom: 22px; }
